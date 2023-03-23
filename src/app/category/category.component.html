@@ -1,23 +1,26 @@
 <section class="categories">
   <h2>Browse by Category</h2>
   <ul>
-    <li><a href="#">Action</a></li>
+    <!-- <li><a href="#">Action</a></li>
     <li><a href="#">Comedy</a></li>
     <li><a href="#">Drama</a></li>
     <li><a href="#">Sci-Fi</a></li>
-    <li><a href="#">Horror</a></li>
+    <li><a href="#">Horror</a></li> -->
+    <li *ngFor="let category of categories">
+      <a routerLink="/category/{{ category.id }}">{{ category.title }}</a>
+    </li>
   </ul>
 </section>
+
 <section class="trending-now">
-  <h2>Category name</h2>
+  <h2>{{ category.title }}</h2>
+
   <div class="trending-now-container">
-    <div class="trending-now-item">
-      <img src="../assets/img.png" alt="Trending Now 1">
-      <h3>Trending Now 1</h3>
-    </div>
-    <div class="trending-now-item">
-      <img src="../assets/img.png" alt="Trending Now 2">
-      <h3>Trending Now 2</h3>
+    <div class="trending-now-item" *ngFor="let movie of movies">
+      <a routerLink="/movie/{{ movie.id }}"
+        ><img src="{{ movie.imageUrl }}" alt="Trending Now 1"
+      /></a>
+      <h3>{{ movie.title }}</h3>
     </div>
   </div>
 </section>

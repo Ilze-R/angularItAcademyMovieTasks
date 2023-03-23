@@ -9,7 +9,7 @@ import { NotFoundComponentComponent } from './not-found-component/not-found-comp
 import { TvShowsComponent } from './tv-shows/tv-shows.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'category', component: CategoryComponent },
+  { path: 'category/:id', component: CategoryComponent },
   { path: 'my-list', component: MyListComponent },
   { path: 'tv-shows', component: TvShowsComponent },
   {
